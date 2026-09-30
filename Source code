@@ -1,0 +1,1228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Career Pilot - Placement Preparation</title>
+
+<style>
+
+/* =========================
+   RESET
+========================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    background:#07070d;
+    color:#ffffff;
+    line-height:1.6;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+button{
+    font-family:inherit;
+}
+
+
+/* =========================
+   VARIABLES
+========================= */
+
+:root{
+    --bg:#07070d;
+    --bg2:#0c0b14;
+    --card:#11101b;
+    --card2:#151421;
+    --border:#272433;
+    --text:#ffffff;
+    --muted:#9b98a9;
+    --purple:#8b5cf6;
+    --purple2:#6d28d9;
+    --pink:#c084fc;
+}
+
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar{
+    width:100%;
+    position:sticky;
+    top:0;
+    z-index:1000;
+    background:rgba(7,7,13,.85);
+    backdrop-filter:blur(15px);
+    border-bottom:1px solid rgba(255,255,255,.06);
+}
+
+.nav-inner{
+    max-width:1200px;
+    margin:auto;
+    height:76px;
+    padding:0 25px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-size:22px;
+    font-weight:800;
+}
+
+.logo-icon{
+    width:36px;
+    height:36px;
+    border-radius:10px;
+    background:linear-gradient(135deg,#8b5cf6,#c084fc);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-weight:bold;
+}
+
+.nav-links{
+    display:flex;
+    align-items:center;
+    gap:30px;
+}
+
+.nav-links a{
+    color:#aaa7b6;
+    font-size:14px;
+    transition:.3s;
+}
+
+.nav-links a:hover{
+    color:#fff;
+}
+
+.nav-btn{
+    padding:11px 20px;
+    border-radius:10px;
+    background:#fff;
+    color:#111;
+    font-weight:700;
+    font-size:14px;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+    min-height:680px;
+    position:relative;
+    overflow:hidden;
+    display:flex;
+    align-items:center;
+    text-align:center;
+    padding:100px 20px;
+}
+
+.hero::before{
+    content:"";
+    position:absolute;
+    width:700px;
+    height:700px;
+    background:rgba(124,58,237,.20);
+    filter:blur(130px);
+    border-radius:50%;
+    left:50%;
+    top:-300px;
+    transform:translateX(-50%);
+}
+
+.hero-content{
+    max-width:900px;
+    margin:auto;
+    position:relative;
+    z-index:2;
+}
+
+.badge{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    border:1px solid #33284d;
+    background:#100d1c;
+    color:#bda4ff;
+    padding:8px 15px;
+    border-radius:30px;
+    font-size:13px;
+    margin-bottom:25px;
+}
+
+.badge-dot{
+    width:7px;
+    height:7px;
+    border-radius:50%;
+    background:#a78bfa;
+}
+
+.hero h1{
+    font-size:clamp(42px,7vw,76px);
+    line-height:1.05;
+    letter-spacing:-3px;
+    margin-bottom:25px;
+}
+
+.gradient-text{
+    background:linear-gradient(90deg,#8b5cf6,#c084fc,#f0abfc);
+    -webkit-background-clip:text;
+    color:transparent;
+}
+
+.hero p{
+    max-width:650px;
+    margin:auto;
+    color:#aaa7b6;
+    font-size:18px;
+}
+
+.hero-buttons{
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    margin-top:35px;
+}
+
+.primary-btn{
+    background:linear-gradient(135deg,#8b5cf6,#6d28d9);
+    padding:14px 25px;
+    border-radius:10px;
+    color:white;
+    font-weight:bold;
+    border:1px solid #9b6cff;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.primary-btn:hover{
+    transform:translateY(-2px);
+    box-shadow:0 10px 30px rgba(139,92,246,.3);
+}
+
+.secondary-btn{
+    padding:14px 25px;
+    border-radius:10px;
+    border:1px solid #332f40;
+    background:#12111a;
+    color:#fff;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.secondary-btn:hover{
+    background:#1b1925;
+}
+
+
+/* =========================
+   PIPELINE
+========================= */
+
+.pipeline{
+    max-width:1150px;
+    margin:-50px auto 100px;
+    padding:0 20px;
+    position:relative;
+    z-index:3;
+}
+
+.pipeline-box{
+    display:grid;
+    grid-template-columns:repeat(5,1fr);
+    gap:10px;
+}
+
+.pipeline-card{
+    min-height:150px;
+    background:linear-gradient(180deg,#14121e,#0e0d15);
+    border:1px solid #282435;
+    border-radius:15px;
+    padding:25px 15px;
+    text-align:center;
+    transition:.3s;
+}
+
+.pipeline-card:hover{
+    transform:translateY(-5px);
+    border-color:#7045bd;
+}
+
+.pipeline-number{
+    color:#8b5cf6;
+    font-size:12px;
+    font-weight:bold;
+}
+
+.pipeline-icon{
+    font-size:30px;
+    margin:8px 0;
+}
+
+.pipeline-card h3{
+    font-size:15px;
+}
+
+.pipeline-card p{
+    color:#858291;
+    font-size:12px;
+    margin-top:5px;
+}
+
+
+/* =========================
+   COMMON SECTION
+========================= */
+
+section{
+    padding:100px 20px;
+}
+
+.container{
+    max-width:1150px;
+    margin:auto;
+}
+
+.section-heading{
+    text-align:center;
+    max-width:700px;
+    margin:0 auto 60px;
+}
+
+.section-heading span{
+    color:#9b72ff;
+    text-transform:uppercase;
+    font-size:12px;
+    font-weight:bold;
+    letter-spacing:2px;
+}
+
+.section-heading h2{
+    font-size:42px;
+    line-height:1.15;
+    margin:12px 0;
+}
+
+.section-heading p{
+    color:#918e9f;
+}
+
+
+/* =========================
+   FEATURES
+========================= */
+
+.features{
+    background:#090911;
+}
+
+.feature-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
+}
+
+.feature-card{
+    background:#11101a;
+    border:1px solid #242230;
+    border-radius:16px;
+    padding:30px;
+    transition:.3s;
+}
+
+.feature-card:hover{
+    transform:translateY(-5px);
+    border-color:#6440a8;
+}
+
+.feature-icon{
+    width:45px;
+    height:45px;
+    border-radius:12px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:#1c1630;
+    color:#a78bfa;
+    font-size:21px;
+    margin-bottom:20px;
+}
+
+.feature-card h3{
+    margin-bottom:10px;
+}
+
+.feature-card p{
+    color:#8e8a9b;
+    font-size:14px;
+}
+
+
+/* =========================
+   STEPS
+========================= */
+
+.steps{
+    background:#07070d;
+}
+
+.steps-list{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.step{
+    padding:25px;
+    border:1px solid #242230;
+    border-radius:15px;
+    background:#0e0d15;
+}
+
+.step-number{
+    color:#8b5cf6;
+    font-size:13px;
+    font-weight:bold;
+    margin-bottom:15px;
+}
+
+.step h3{
+    margin-bottom:8px;
+}
+
+.step p{
+    color:#898696;
+    font-size:14px;
+}
+
+
+/* =========================
+   INTERVIEW
+========================= */
+
+.interview{
+    background:
+    radial-gradient(circle at 80% 20%,rgba(124,58,237,.15),transparent 35%),
+    #0a0910;
+}
+
+.interview-wrapper{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:70px;
+    align-items:center;
+}
+
+.interview-content h2{
+    font-size:45px;
+    line-height:1.15;
+    margin:15px 0;
+}
+
+.interview-content p{
+    color:#9995a5;
+}
+
+.check-list{
+    margin-top:25px;
+    display:flex;
+    flex-direction:column;
+    gap:13px;
+}
+
+.check{
+    display:flex;
+    gap:12px;
+    align-items:center;
+    color:#d6d3dd;
+    font-size:14px;
+}
+
+.check span{
+    width:22px;
+    height:22px;
+    border-radius:50%;
+    background:#241742;
+    color:#a78bfa;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.interviewer-card{
+    background:linear-gradient(145deg,#171322,#0e0c14);
+    border:1px solid #302844;
+    border-radius:20px;
+    padding:25px;
+    box-shadow:0 25px 70px rgba(0,0,0,.4);
+}
+
+.interviewer-top{
+    display:flex;
+    align-items:center;
+    gap:15px;
+    border-bottom:1px solid #282331;
+    padding-bottom:20px;
+}
+
+.avatar{
+    width:52px;
+    height:52px;
+    border-radius:50%;
+    background:linear-gradient(135deg,#8b5cf6,#d8b4fe);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:22px;
+}
+
+.interviewer-info h4{
+    font-size:16px;
+}
+
+.interviewer-info p{
+    color:#858190;
+    font-size:12px;
+}
+
+.chat{
+    padding-top:20px;
+}
+
+.message{
+    background:#191722;
+    padding:14px;
+    border-radius:12px;
+    margin-bottom:12px;
+    color:#c1becb;
+    font-size:13px;
+}
+
+.message.user{
+    background:#2a1b48;
+    margin-left:50px;
+    color:#ddd3f2;
+}
+
+
+/* =========================
+   COMPANY HUB
+========================= */
+
+.company{
+    background:#090911;
+}
+
+.company-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:16px;
+}
+
+.company-card{
+    min-height:150px;
+    background:#11101a;
+    border:1px solid #252230;
+    border-radius:15px;
+    padding:25px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    transition:.3s;
+}
+
+.company-card:hover{
+    transform:translateY(-5px);
+    border-color:#6842ac;
+}
+
+.company-logo{
+    width:48px;
+    height:48px;
+    border-radius:12px;
+    background:#1d1a28;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:18px;
+    font-weight:bold;
+    color:#c4b5fd;
+    margin-bottom:15px;
+}
+
+.company-card h3{
+    font-size:17px;
+}
+
+.company-card p{
+    color:#7f7b8b;
+    font-size:12px;
+}
+
+
+/* =========================
+   TESTIMONIALS
+========================= */
+
+.testimonials{
+    margin-top:70px;
+}
+
+.testimonial-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
+}
+
+.testimonial{
+    background:#11101a;
+    border:1px solid #242230;
+    border-radius:16px;
+    padding:25px;
+}
+
+.stars{
+    color:#b18aff;
+    margin-bottom:15px;
+}
+
+.testimonial p{
+    color:#a09daa;
+    font-size:14px;
+    margin-bottom:20px;
+}
+
+.person{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.person-avatar{
+    width:38px;
+    height:38px;
+    border-radius:50%;
+    background:#2b2240;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.person small{
+    color:#777483;
+}
+
+
+/* =========================
+   PRICING
+========================= */
+
+.pricing{
+    background:#07070d;
+}
+
+.pricing-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+    align-items:stretch;
+}
+
+.price-card{
+    background:#101019;
+    border:1px solid #282532;
+    border-radius:18px;
+    padding:35px;
+    position:relative;
+}
+
+.price-card.featured{
+    border-color:#8b5cf6;
+    background:linear-gradient(180deg,#171025,#100e17);
+}
+
+.popular{
+    position:absolute;
+    right:20px;
+    top:20px;
+    background:#8b5cf6;
+    color:white;
+    padding:5px 10px;
+    border-radius:20px;
+    font-size:10px;
+    font-weight:bold;
+}
+
+.price-card h3{
+    font-size:21px;
+}
+
+.price-card .desc{
+    color:#858291;
+    font-size:13px;
+    margin:10px 0 25px;
+}
+
+.price{
+    font-size:45px;
+    font-weight:800;
+    margin-bottom:25px;
+}
+
+.price span{
+    font-size:13px;
+    color:#777483;
+    font-weight:normal;
+}
+
+.price-features{
+    list-style:none;
+    display:flex;
+    flex-direction:column;
+    gap:13px;
+    margin-bottom:30px;
+}
+
+.price-features li{
+    color:#a7a4b1;
+    font-size:13px;
+}
+
+.price-features li::before{
+    content:"✓";
+    color:#a78bfa;
+    margin-right:10px;
+}
+
+.price-btn{
+    width:100%;
+    padding:13px;
+    border-radius:9px;
+    border:1px solid #36313f;
+    background:#181620;
+    color:#fff;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.price-card.featured .price-btn{
+    background:#8b5cf6;
+    border-color:#8b5cf6;
+}
+
+
+/* =========================
+   CTA
+========================= */
+
+.cta{
+    padding:100px 20px;
+}
+
+.cta-box{
+    max-width:1050px;
+    margin:auto;
+    border-radius:25px;
+    padding:80px 30px;
+    text-align:center;
+    background:
+    radial-gradient(circle at 50% 0%,rgba(192,132,252,.3),transparent 40%),
+    linear-gradient(135deg,#1d1235,#130e20);
+    border:1px solid #443064;
+}
+
+.cta-box h2{
+    font-size:45px;
+    margin-bottom:15px;
+}
+
+.cta-box p{
+    max-width:550px;
+    margin:0 auto 30px;
+    color:#a8a3b3;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+    border-top:1px solid #201e28;
+    padding:50px 20px 25px;
+    background:#07070d;
+}
+
+.footer-inner{
+    max-width:1150px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:2fr 1fr 1fr 1fr;
+    gap:40px;
+}
+
+.footer-brand p{
+    color:#777483;
+    font-size:13px;
+    max-width:300px;
+    margin-top:15px;
+}
+
+.footer-col h4{
+    margin-bottom:15px;
+    font-size:14px;
+}
+
+.footer-col a{
+    display:block;
+    color:#777483;
+    font-size:13px;
+    margin:8px 0;
+}
+
+.footer-col a:hover{
+    color:white;
+}
+
+.copyright{
+    max-width:1150px;
+    margin:45px auto 0;
+    padding-top:20px;
+    border-top:1px solid #201e28;
+    color:#625f6b;
+    font-size:12px;
+    display:flex;
+    justify-content:space-between;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:900px){
+
+    .nav-links{
+        display:none;
+    }
+
+    .pipeline-box{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .feature-grid,
+    .steps-list{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .company-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .interview-wrapper{
+        grid-template-columns:1fr;
+    }
+
+    .pricing-grid{
+        grid-template-columns:1fr;
+    }
+
+    .footer-inner{
+        grid-template-columns:1fr 1fr;
+    }
+}
+
+
+@media(max-width:600px){
+
+    .hero{
+        padding:80px 18px;
+    }
+
+    .hero h1{
+        font-size:43px;
+        letter-spacing:-2px;
+    }
+
+    .hero p{
+        font-size:15px;
+    }
+
+    .hero-buttons{
+        flex-direction:column;
+    }
+
+    .pipeline{
+        margin-top:-20px;
+    }
+
+    .pipeline-box{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .pipeline-card{
+        min-height:130px;
+        padding:18px 10px;
+    }
+
+    .section-heading h2,
+    .interview-content h2,
+    .cta-box h2{
+        font-size:32px;
+    }
+
+    .feature-grid,
+    .steps-list,
+    .company-grid,
+    .testimonial-grid{
+        grid-template-columns:1fr;
+    }
+
+    .footer-inner{
+        grid-template-columns:1fr;
+    }
+
+    .copyright{
+        flex-direction:column;
+        gap:8px;
+    }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     NAVBAR
+========================= -->
+
+<nav class="navbar">
+
+    <div class="nav-inner">
+
+        <a href="#" class="logo">
+            <div class="logo-icon">✦</div>
+            Career Pilot
+        </a>
+
+        <div class="nav-links">
+            <a href="#features">Features</a>
+            <a href="#steps">How it works</a>
+            <a href="#companies">Companies</a>
+            <a href="#pricing">Pricing</a>
+        </div>
+
+        <a href="#pricing" class="nav-btn">
+            Get Started
+        </a>
+
+    </div>
+
+</nav>
+
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section class="hero" id="home">
+
+    <div class="hero-content">
+
+        <div class="badge">
+            <span class="badge-dot"></span>
+            Your complete placement companion
+        </div>
+
+        <h1>
+            Navigate your
+            <br>
+            <span class="gradient-text">career with confidence.</span>
+        </h1>
+
+        <p>
+            Career Pilot helps students prepare, practice and perform
+            better throughout their placement journey — from preparation
+            to the final offer.
+        </p>
+
+        <div class="hero-buttons">
+
+            <a href="#pricing" class="primary-btn">
+                Start Your Journey →
+            </a>
+
+            <a href="#steps" class="secondary-btn">
+                Explore Platform
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     PIPELINE
+========================= -->
+
+<div class="pipeline">
+
+    <div class="pipeline-box">
+
+        <div class="pipeline-card">
+
+            <div class="pipeline-number">01</div>
+
+            <div class="pipeline-icon">🎓</div>
+
+            <h3>Student</h3>
+
+            <p>Build your profile</p>
+
+        </div>
+
+
+        <div class="pipeline-card">
+
+            <div class="pipeline-number">02</div>
+
+            <div class="pipeline-icon">📚</div>
+
+            <h3>Preparation</h3>
+
+            <p>Learn & practice</p>
+
+        </div>
+
+
+        <div class="pipeline-card">
+
+            <div class="pipeline-number">03</div>
+
+            <div class="pipeline-icon">🎤</div>
+
+            <h3>AI Interview</h3>
+
+            <p>Practice interviews</p>
+
+        </div>
+
+
+        <div class="pipeline-card">
+
+            <div class="pipeline-number">04</div>
+
+            <div class="pipeline-icon">📊</div>
+
+            <h3>Performance</h3>
+
+            <p>Track improvement</p>
+
+        </div>
+
+
+        <div class="pipeline-card">
+
+            <div class="pipeline-number">05</div>
+
+            <div class="pipeline-icon">🚀</div>
+
+            <h3>Placement</h3>
+
+            <p>Get placement ready</p>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<!-- =========================
+     FEATURES
+========================= -->
+
+<section class="features" id="features">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <span>Everything you need</span>
+
+            <h2>
+                Built for every stage
+                of placement season.
+            </h2>
+
+            <p>
+                One platform to organize preparation,
+                practice skills and become interview ready.
+            </p>
+
+        </div>
+
+
+        <div class="feature-grid">
+
+
+            <div class="feature-card">
+
+                <div class="feature-icon">📋</div>
+
+                <h3>Smart Preparation</h3>
+
+                <p>
+                    Follow structured preparation paths
+                    and focus on the skills that matter most
+                    for your target companies.
+                </p>
+
+            </div>
+
+
+            <div class="feature-card">
+
+                <div class="feature-icon">🤖</div>
+
+                <h3>AI Mock Interviews</h3>
+
+                <p>
+                    Practice realistic interview conversations
+                    and improve your confidence before the real interview.
+                </p>
+
+            </div>
+
+
+            <div class="feature-card">
+
+                <div class="feature-icon">📈</div>
+
+                <h3>Performance Analytics</h3>
+
+                <p>
+                    Track your preparation progress and
+                    understand where you can improve.
+                </p>
+
+            </div>
+
+
+            <div class="feature-card">
+
+                <div class="feature-icon">🏢</div>
+
+                <h3>Company Hub</h3>
+
+                <p>
+                    Explore companies and understand
+                    opportunities available for students.
+                </p>
+
+            </div>
+
+
+            <div class="feature-card">
+
+                <div class="feature-icon">🎯</div>
+
+                <h3>Placement Readiness</h3>
+
+                <p>
+                    Build confidence through preparation,
+                    practice and continuous improvement.
+                </p>
+
+            </div>
+
+
+            <div class="feature-card">
+
+                <div class="feature-icon">⚡</div>
+
+                <h3>One Clear Journey</h3>
+
+                <p>
+                    Keep your complete placement preparation
+                    journey organized in one place.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     STEPS
+========================= -->
+
+<section class="steps" id="steps">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <span>Simple workflow</span>
+
+            <h2>
+                Six steps.
+                One clear path to your offer.
+            </h2>
+
+            <p>
+                Follow a simple process from creating your
+                profile to becoming placement ready.
+            </p>
+
+        </div>
+
+
+        <div class="steps-list">
+
+
+            <div class="step">
+
+                <div class="step-number">STEP 01</div>
+
+                <h3>Create your profile</h3>
+
+                <p>
+                    Add your
